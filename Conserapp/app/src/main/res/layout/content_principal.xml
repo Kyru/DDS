@@ -8,4 +8,11 @@
     tools:context="com.visual.conserapp.Principal"
     tools:showIn="@layout/app_bar_principal">
 
+    <TextView
+        android:id="@+id/prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="108dp" />
 </android.support.constraint.ConstraintLayout>
