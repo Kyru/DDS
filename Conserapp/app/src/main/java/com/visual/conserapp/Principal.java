@@ -1,15 +1,22 @@
 package com.visual.conserapp;
 
+import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+
+import static java.sql.DriverManager.println;
 
 public class Principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -21,8 +28,8 @@ public class Principal extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-  /*      fab.setOnClickListener(new View.OnClickListener() {
+     //   FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    /*    fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -38,16 +45,6 @@ public class Principal extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        MenuItem cart_id = (MenuItem) findViewById(R.id.cart_id);
-        cart_id.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem menuItem) {
-                onCart();
-                return true;
-            }
-        });
-
-
 
     }
 
@@ -109,10 +106,16 @@ public class Principal extends AppCompatActivity
     }
 
 
-    public void onCart(){
-        TextView tv = (TextView) findViewById(R.id.prueba);
-        tv.setText("Adios");
+
+    public boolean onNavSuperior(MenuItem menuitem){
+        int id = menuitem.getItemId();
+        Intent intent;
+        if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
+        else intent = new Intent(this,Offers.class);
+        startActivity(intent);
+        return true;
     }
+
 
 
 
