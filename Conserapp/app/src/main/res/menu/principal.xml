@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
+    <!--<item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+        -->
+    <item
+        android:title=""
+        android:id="@+id/cart_id"
+        android:orderInCategory="02"
+        android:icon="@drawable/cart"
+        app:showAsAction="always" />
+    <item
+        android:title=""
+        android:orderInCategory="01"
+        android:id="@+id/offers_id"
+        android:icon="@drawable/offers"
+        app:showAsAction="always" />
 </menu>
