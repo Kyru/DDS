@@ -9,12 +9,13 @@
     tools:showIn="@layout/activity_home">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quinta Prueba?"
+        android:layout_width="193dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="84dp"
+        android:text="Primer branch, test"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498" />
 
 </android.support.constraint.ConstraintLayout>
