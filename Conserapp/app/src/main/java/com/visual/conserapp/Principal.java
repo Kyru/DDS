@@ -112,16 +112,14 @@ public class Principal extends AppCompatActivity
 
 
 
-    public boolean onNavSuperior(MenuItem menuitem, View view){
+    public boolean onNavSuperior(MenuItem menuitem){
 
-        boolean checked = ((RadioButton) view).isChecked();
-
+        View view = menuitem.getActionView();
         RadioGroup radiogrupo = (RadioGroup) findViewById(R.id.rg);
         int idRadioGrupo = radiogrupo.getCheckedRadioButtonId();
-
+        boolean checked = (radiogrupo.getCheckedRadioButtonId() != -1);
         Bundle bundle = new Bundle();
         String res = "";
-
         if(checked) {
             switch (idRadioGrupo) {
                 case R.id.radioButton1:
@@ -132,18 +130,14 @@ public class Principal extends AppCompatActivity
                     break;
                 case R.id.radioButton3:
                     res = "button3";
-
                     break;
-
             }
         }
         bundle.putString("switch", res);
 
-
-
-        int id = menuitem.getItemId();
+        int idBotonTop = menuitem.getItemId();
         Intent intent;
-        if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
+        if(idBotonTop == R.id.cart_id)  intent = new Intent(this,Cart.class);
         else intent = new Intent(this,Offers.class);
 
         intent.putExtras(bundle);
@@ -152,12 +146,13 @@ public class Principal extends AppCompatActivity
         return true;
     }
 
+/*
     public void selectOptionTest(){
 
     }
 
     public void onRadioButtonClicked(MenuItem menuitem, View view) {
-/*
+
         String res = "Default";
 
         RadioGroup radiogrupo = (RadioGroup) findViewById(R.id.rg);
@@ -165,10 +160,10 @@ public class Principal extends AppCompatActivity
 
 
         int id = menuitem.getItemId();
-        /*Intent intent;
+        Intent intent;
         if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
-        else intent = new Intent(this,Offers.class);*/
-/*
+        else intent = new Intent(this,Offers.class);
+
         Bundle bundle = new Bundle();
 
         switch(idRG) {
@@ -193,43 +188,6 @@ public class Principal extends AppCompatActivity
 
         startActivityForResult(intent, 0000);
 */
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
