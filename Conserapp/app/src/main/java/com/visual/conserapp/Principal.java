@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import static java.sql.DriverManager.println;
@@ -111,12 +112,43 @@ public class Principal extends AppCompatActivity
 
 
 
-    public boolean onNavSuperior(MenuItem menuitem){
+    public boolean onNavSuperior(MenuItem menuitem, View view){
+
+        boolean checked = ((RadioButton) view).isChecked();
+
+        RadioGroup radiogrupo = (RadioGroup) findViewById(R.id.rg);
+        int idRadioGrupo = radiogrupo.getCheckedRadioButtonId();
+
+        Bundle bundle = new Bundle();
+        String res = "";
+
+        if(checked) {
+            switch (idRadioGrupo) {
+                case R.id.radioButton1:
+                    res = "button1";
+                    break;
+                case R.id.radioButton2:
+                    res = "button2";
+                    break;
+                case R.id.radioButton3:
+                    res = "button3";
+
+                    break;
+
+            }
+        }
+        bundle.putString("switch", res);
+
+
+
         int id = menuitem.getItemId();
         Intent intent;
         if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
         else intent = new Intent(this,Offers.class);
+
+        intent.putExtras(bundle);
         startActivity(intent);
+
         return true;
     }
 
@@ -125,18 +157,21 @@ public class Principal extends AppCompatActivity
     }
 
     public void onRadioButtonClicked(MenuItem menuitem, View view) {
-
-        boolean checked = ((RadioButton) view).isChecked();
+/*
         String res = "Default";
 
-        int id = menuitem.getItemId();
-        Intent intent;
-        if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
-        else intent = new Intent(this,Offers.class);
+        RadioGroup radiogrupo = (RadioGroup) findViewById(R.id.rg);
+        int idRG = radiogrupo.getCheckedRadioButtonId();
 
+
+        int id = menuitem.getItemId();
+        /*Intent intent;
+        if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
+        else intent = new Intent(this,Offers.class);*/
+/*
         Bundle bundle = new Bundle();
 
-        switch(id) {
+        switch(idRG) {
             case R.id.radioButton1:
                 if (checked)
                         res = "button1";
@@ -157,7 +192,7 @@ public class Principal extends AppCompatActivity
         intent.putExtras(bundle);
 
         startActivityForResult(intent, 0000);
-
+*/
 
 
 

@@ -20,6 +20,10 @@ public class Cart extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        String res = getIntent().getExtras().getString("switch");
+        TextView t = (TextView) findViewById(R.id.textView);
+        t.setText(res);
+
 
     }
 
