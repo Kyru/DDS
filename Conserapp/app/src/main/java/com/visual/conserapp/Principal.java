@@ -38,6 +38,7 @@ public class Principal extends AppCompatActivity
         });*/
 
         // Comentario Ferran para probar GIT
+        //Probando GIT hector
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
