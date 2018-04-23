@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 public class Cart extends AppCompatActivity {
 
@@ -36,5 +37,14 @@ public class Cart extends AppCompatActivity {
         else intent = new Intent(this,Offers.class);
         startActivity(intent);
         return true;
+    }
+
+    public void receiveStuff(){
+        String res = getIntent().getExtras().getString("switch");
+
+        TextView t = (TextView) findViewById(R.id.textView);
+
+        t.setText(res);
+
     }
 }

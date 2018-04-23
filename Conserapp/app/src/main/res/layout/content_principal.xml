@@ -8,12 +8,62 @@
     tools:context="com.visual.conserapp.Principal"
     tools:showIn="@layout/app_bar_principal">
 
-    <TextView
-        android:id="@+id/prueba"
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="108dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="252dp"
+            android:layout_height="83dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="247dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:text="EjemploMedio"
+            app:layout_constraintBottom_toTopOf="@+id/radioButton3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="267dp"
+            android:layout_height="72dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="261dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="EjemploTop"
+            app:layout_constraintBottom_toTopOf="@+id/radioButton1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.51"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="266dp"
+            android:layout_height="76dp"
+            android:layout_marginBottom="377dp"
+            android:layout_marginEnd="264dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_weight="1"
+            android:text="EjemploBot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton1" />
+    </RadioGroup>
 
 </android.support.constraint.ConstraintLayout>

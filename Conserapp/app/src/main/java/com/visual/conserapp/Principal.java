@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import static java.sql.DriverManager.println;
@@ -119,9 +120,49 @@ public class Principal extends AppCompatActivity
         return true;
     }
 
+    public void selectOptionTest(){
+
+    }
+
+    public void onRadioButtonClicked(MenuItem menuitem, View view) {
+
+        boolean checked = ((RadioButton) view).isChecked();
+        String res = "Default";
+
+        int id = menuitem.getItemId();
+        Intent intent;
+        if(id == R.id.cart_id)  intent = new Intent(this,Cart.class);
+        else intent = new Intent(this,Offers.class);
+
+        Bundle bundle = new Bundle();
+
+        switch(id) {
+            case R.id.radioButton1:
+                if (checked)
+                        res = "button1";
+                        bundle.putString("switch", res);
+                    break;
+            case R.id.radioButton2:
+                if (checked)
+                        res = "button2";
+                        bundle.putString("switch", res);
+                    break;
+            case R.id.radioButton3:
+                if (checked)
+                        res = "button3";
+                        bundle.putString("switch", res);
+                    break;
+        }
+
+        intent.putExtras(bundle);
+
+        startActivityForResult(intent, 0000);
 
 
 
+
+
+    }
 
 
 
