@@ -37,6 +37,8 @@ public class Principal extends AppCompatActivity
             }
         });*/
 
+        // Comentario Ferran para probar GIT
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
